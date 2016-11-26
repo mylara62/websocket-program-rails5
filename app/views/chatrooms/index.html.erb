@@ -1,0 +1,23 @@
+<div class="row col-md-8 col-md-offset-2">
+  <h1>Chat Group List</h1><br><br>
+
+  <div class="row col-md-8 col-md-offset-0">
+    <% if @chatrooms.any? %>
+      <table class="table table-hover">
+        <tr>
+          <th>ID</th>
+          <th>Chat Name</th>
+        </tr>
+        <% @chatrooms.each_with_index do |chat, index|%>
+          <tr>
+            <td><%= index+1%></td>
+            <td><%= link_to chat.topic, chatroom_path(chat.topic)%></td>
+          </tr>
+        <%end%>
+      </table>
+    <%else%>
+      <p> Be the first person to create chatgroup !</p>
+    <%end%>
+  </div>
+</div>
+

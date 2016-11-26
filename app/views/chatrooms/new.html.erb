@@ -1,0 +1,17 @@
+<div class="row col-md-8 col-md-offset-2">
+  <h2>New Chat</h2>
+    <div class="well">
+      <div class="chatroom-form">
+        <%= form_for @chatroom do |f| %>
+          <div class="input-group">
+            <span class="input-group-addon">@</span>
+            <%= f.text_field :topic, class: "form-control", placeholder: 'New Topic'%>
+          </div><br><br>
+          <%= f.submit class: "btn btn-warning", id: "create-chatroom" %>
+        <% end %>
+      </div>
+    </div>
+
+    <%= render partial: 'layouts/flash_errors'%>
+</div>
+
